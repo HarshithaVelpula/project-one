@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impressive Premium Calculator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Calculate Your Premium ✨</h1>
+        <form id="premium-form">
+            <div class="form-group">
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" required min="18" max="65">
+            </div>
+            <div class="form-group">
+                <label for="gender">Gender:</label>
+                <select id="gender" name="gender" required>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="is_smoker">Smoker?</label>
+                <select id="is_smoker" name="is_smoker" required>
+                    <option value="false">No</option>
+                    <option value="true">Yes</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="sum_assured">Sum Assured (in Lakhs):</label>
+                <input type="number" id="sum_assured" name="sum_assured" required min="10" max="500">
+            </div>
+            <div class="form-group">
+                <label for="policy_term">Policy Term (in years):</label>
+                <input type="number" id="policy_term" name="policy_term" required min="10" max="50">
+            </div>
+            <button type="submit">Get Your Quote</button>
+        </form>
+        <div id="result" class="fade-in"></div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
